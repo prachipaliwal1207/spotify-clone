@@ -1,0 +1,14 @@
+<div class="spotify_top-nav">
+  <div class="spotify_top-nav-focus_title mt-3">
+    <span><i class="fa fa-angle-left" style="font-size:30px"></i></span>
+    <span><i class="fa fa-angle-right" style="font-size:30px"></i></span>
+    <div *ngIf="isSearchFileVisible" class="search">
+      <i class="fa fa-search" style="font-size:24px"></i>
+      <input type="text" placeholder="What do you want to listen?" (input)="searchSong($event)">
+    </div>
+  </div>
+  <div class="spotify_top-nav_auth">
+    <div class="spotify_top-nav_auth_sign_up" routerLink="/signUp">Sign up</div>
+    <div class="spotify_top-nav_auth_sign_in" routerLink="/login">Login</div>
+  </div>
+</div>

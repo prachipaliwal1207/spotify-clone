@@ -1,0 +1,52 @@
+<div class="spotify_home-container">
+    <div class="spotify_home-coontainer-sidebar col-2">
+        <div class="spotify_home-coontainer-sidebar-items">
+            <img width="150px" class="mt-3"
+                src="https://storage.googleapis.com/pr-newsroom-wp/1/2023/05/Spotify_Full_Logo_RGB_White-300x82.png"
+                alt="spotify light logo">
+        </div>
+        <div class="spotify_home-coontainer-sidebar-items mt-3"
+            (click)="onNavigation('home')">
+            <i class="fa fa-home"></i><a>Home</a>
+        </div>
+        <div class="spotify_home-coontainer-sidebar-items"
+            (click)="onNavigation('search')">
+            <i class="fa fa-search"></i><a>Search</a>
+        </div>
+        <div class="spotify_home-coontainer-sidebar-items"
+            (click)="onNavigation('library')">
+            <i class="fa fa-bookmark"></i><a>Your Library</a>
+        </div>
+        <div class="spotify_home-coontainer-sidebar-items mt-4"
+            (click)="onNavigation('playlist')" >
+            <i class="fa fa-plus"></i><a>Create Playlist</a>
+        </div>
+        <div class="spotify_home-coontainer-sidebar-items">
+            <i class="fa fa-heart"></i><a>Liked Songs</a>
+        </div>
+    </div>
+    <div class="spotify_home-container_playlist-container col-10">
+        <app-top-nav></app-top-nav>
+        <div [style.paddingTop]="'48px'" [style.marginLeft]="'20px'"
+            class="mt-5">
+            <div class="playlist_collection">
+                <div id="song_card_item" *ngFor="let sc of songCards">
+                    <app-card [description]="sc.description" [title]="sc.title"
+                        [link]="sc.song_link" [playlistThumbnail]="sc.image"
+                        [id]="sc.song_id"></app-card>
+                </div>
+            </div>
+        </div>
+        <div [style.marginLeft]="'20px'"
+            class="mt-5">
+            <h4 class="text-white mx-4 my-3">Spotify Playlist</h4>
+            <div class="playlist_collection">
+                <div id="song_card_item" *ngFor="let sc of songCards">
+                    <app-card [description]="sc.description" [title]="sc.title"
+                        [link]="sc.song_link" [playlistThumbnail]="sc.image"
+                        [id]="sc.song_id"></app-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

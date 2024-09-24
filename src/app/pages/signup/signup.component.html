@@ -1,0 +1,38 @@
+<div class="login_container">
+    <div class="spotify-login-container">
+        <div class="spotify-login-container_img mt-3">
+            <img src="spotify-logo.webp" alt="Spotify Logo"> 
+            <h1 class="text-center mt-3">Sign up to <br> start listening</h1>
+        </div>
+        <form #loginForm="ngForm" (ngSubmit)="submit(loginForm.value)">
+            <div class="spotify-login-container_login">
+                <div class="username">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="name@gmail.com"
+                        #email1="ngModel" [(ngModel)]="form.email" required email>
+                    <div *ngIf="email1.invalid && (email1.dirty || email1.touched)">
+                        <div *ngIf="email1.errors?.['required']">
+                            <span class="text-danger">This email is required.</span>
+                        </div>
+                        <div *ngIf="email1.errors?.['email']">
+                            <span class="text-danger">Make sure it's written like example&#64;email.com</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="forgot_password">
+                    <a href="#">Use phone number instead.</a>
+                </div>
+                <div class="loginBtn mt-3">
+                    <button type="submit" routerLink="/">Next</button>
+                </div>
+                <div class="signIn text-center">
+                    <span>Already have an account?</span>&nbsp;
+                    <a routerLink="/login"> Log in here.</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="footer mt-5">
+        <span>This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</span>
+      </div>
+</div>

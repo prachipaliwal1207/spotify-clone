@@ -1,0 +1,18 @@
+<div class="mp3_player-container container-fluid">
+    <div class="mp3-player-card">
+        <img [src]="songData?.thumbail" width="200px" height="200px" class="mb-3 mt-2 img">
+        <audio controls [style.backgroundColor]="'1F1F1F'">
+            <source [src]="songData.song_link" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <span class="text-white mt-3 title"
+            [title]="songData.title">{{songData.title}}</span>
+        <span class="text-white text-center mt-2 description"
+            [title]="songData.tdescription">{{songData.description}}</span>
+
+        <!-- <div class="mp3-player-card" *ngIf="!songData?.link">
+            <h3>
+                No Song Data Available
+            </h3> </div> -->
+    </div>
+</div>

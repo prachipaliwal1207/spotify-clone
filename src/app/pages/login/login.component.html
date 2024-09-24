@@ -1,0 +1,46 @@
+<div class="login_container">
+    <div class="spotify-login-container">
+        <div class="spotify-login-container_img mt-3">
+            <img src="spotify-logo.webp">
+            <h3>Log in to Spotify</h3>
+        </div>
+      <div class="spotify-login-container_login">
+        <div class="username">
+            <label for="email">Email or username</label>
+            <input type="email" id="email" name="email" placeholder="Email"
+                #email1="ngModel" [(ngModel)]="form.email" required email>
+            <div *ngIf="email1.invalid && (email1.dirty || email1.touched)">
+                <div class="error" *ngIf="email1.errors?.['required']">
+                    <span class="text-danger">This email is required.</span>
+                </div>
+                <div *ngIf="email1.errors?.['email']">
+                    <span class="text-danger">Make sure it's written like example&#64;email.com</span>
+                </div>
+            </div>
+        </div>
+        <div class="password">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Password"
+            #password1="ngModel" [(ngModel)]="form.password" required>
+        <div class="error" *ngIf="password1.invalid && (password1.dirty || password1.touched)">
+            <div *ngIf="password1.errors?.['required']">
+                <span class="text-danger">This password is required.</span>
+            </div>
+        </div>
+        </div>
+        <div class="loginBtn mt-4">
+            <button>Log in</button>
+        </div>
+        <div class="forgot_password mt-2">
+            <a>Forgot your password?</a>
+        </div>
+        <div class="signIn">
+            <span>Don't have an account?</span>&nbsp; <a routerLink="/signUp">Sign up for Spotify</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer mt-5">
+        <span>This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</span>
+      </div>
+</div>
